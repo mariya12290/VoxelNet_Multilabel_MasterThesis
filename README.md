@@ -121,9 +121,10 @@ The current implementation and training scheme are able to produce results in th
 - [] Add waymo results
 - [] A brief description about tackling of class imbalance in 3D/2D
 - [] Add thesis report as well
+- [] Add visual representation for Multi-Label voxelnet
 
 
-#Important Observation
+#####Important Observation
 According to literature review, below points to increase the performance of the model
 - Use of 3D sparse convolution layer as a middle layer
 - Use of more balanced data with more object instances
@@ -134,6 +135,6 @@ According to literature review, below points to increase the performance of the 
 -  Convert the code into tf2 from tf1
 
 
- #Note
+#####Note
 Doing all the above mentioned things, I am pretty sure that, accuracy might reach upto 80% on both pedestrian and cyclist. Since master thesis is for limited time, I can not do everything. Hope somebody can make use of everything. In the meantime, I will try to implement all the above mentioned points and update the repo, whenever I get time.
 
