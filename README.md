@@ -9,6 +9,8 @@ This is an unofficial inplementation of [VoxelNet: End-to-End Learning for Point
 - `shapely`
 - `numba`
 - `easydict`
+- 'mayavi'
+- 'Open3D'
 
 # Installation
 1. Clone this repository.
@@ -87,7 +89,11 @@ $ ./kitti_eval/evaluate_object_3d_offline [DATA_DIR]/validation/label_1 ./predic
 
 # Changes made to the architecture for multi-label classification
  Please see the comments in the files in model folder for more info.
- 
+
+# Voxelization
+Implementation of Preprocessing code(voxelization) by me. But in order to use voxelnet based network on Jetson or embbeded devices, we need to implement voxelization on CUDA.
+Recently, tensorflow team introduce tf3d, where they used tensorflow framework to write preprocessing setup, which directly runs on gpu.
+   
 # Performances
 
 The current implementation and training scheme are able to produce results in the tables below.
@@ -109,8 +115,9 @@ The current implementation and training scheme are able to produce results in th
 # TODO
 - [] improve the preformance by using 3D sparse Convolution instead of Normal 3D convolution
 - [] Add the fusion code
-- [] ADD ROI pooling layer
-
+- [] Add ROI pooling layer
+- [] Add waymo results
+- [] A brief description about tackling of class imbalance in 3D
  
 
 
