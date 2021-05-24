@@ -2,6 +2,8 @@
 
 This is an unofficial inplementation of [VoxelNet: End-to-End Learning for Point Cloud Based 3D Object Detection](https://arxiv.org/abs/1711.06396) in TensorFlow. A large part of this project is based on the work [here](https://github.com/jeasinema/VoxelNet-tensorflow). Thanks to [@jeasinema](https://github.com/jeasinema). This work is a modified version with bugs fixed and better experimental settings to chase the results reported in the paper (still ongoing).
 
+This repo converted voxelnet(Single Object Detection) into Multi-label 3D object detection(mainly Pedestrian and Cyclist)  with Lidar point cloud and model is trained and completely analysed for different distance and classes at the same time on different data sets, such as Kitti and waymo. Initially I tried to annotate the custom data sets as well, but currently there are no user friendly and well developed open source tools available.   
+
 # Dependencies
 - `python3.5+`
 - `TensorFlow` (tested on 1.4.1)
@@ -89,7 +91,7 @@ results will be dumped into `predictions/data`. Set the `--vis` flag to True if 
 $ ./kitti_eval/evaluate_object_3d_offline [DATA_DIR]/validation/label_1 ./predictions
 ```
 
-# Changes made to the architecture for multi-label classification
+# Changes made to the architecture for multi-label object detection
  Please see the comments in the files in model folder for more info.
 
 # Voxelization
@@ -124,7 +126,7 @@ The current implementation and training scheme are able to produce results in th
 - [] Add visual representation for Multi-Label voxelnet
 
 
-#####Important Observation
+##### Important Observation
 According to literature review, below points to increase the performance of the model
 - Use of 3D sparse convolution layer as a middle layer
 - Use of more balanced data with more object instances
@@ -135,6 +137,6 @@ According to literature review, below points to increase the performance of the 
 -  Convert the code into tf2 from tf1
 
 
-#####Note
+##### Note
 Doing all the above mentioned things, I am pretty sure that, accuracy might reach upto 80% on both pedestrian and cyclist. Since master thesis is for limited time, I can not do everything. Hope somebody can make use of everything. In the meantime, I will try to implement all the above mentioned points and update the repo, whenever I get time.
 
