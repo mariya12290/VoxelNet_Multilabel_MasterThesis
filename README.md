@@ -9,8 +9,10 @@ This is an unofficial inplementation of [VoxelNet: End-to-End Learning for Point
 - `shapely`
 - `numba`
 - `easydict`
-- 'mayavi'
-- 'Open3D'
+- `mayavi`  - for visualization of results
+- `Open3D`
+
+- Please install the dependecies based on request.
 
 # Installation
 1. Clone this repository.
@@ -72,7 +74,7 @@ Training on two Nvidia 1080 Ti GPUs takes around 3 days (160 epochs as reported 
 $ python3 parse_log.py predictions
 ```
 
-4. There is a pre-trained model for car in `save_model/pre_trained_car`.
+4. There is a pre-trained model for car in `save_model/pre_trained_pedestrian_cyclist`.
 
 
 # Evaluate
@@ -98,26 +100,40 @@ Recently, tensorflow team introduce tf3d, where they used tensorflow framework t
 
 The current implementation and training scheme are able to produce results in the tables below.
 
-##### Bird's eye view detection performance: AP on KITTI test set
+##### Pedestrian detection performance: AP on KITTI test set
 
 | Pedestrian | Easy | Moderate | Hard |
 |:-:|:-:|:-:|:-:|
-| BEV | 49.0 | 48.30| 45.50 |
-| 3D| 39.45  | 39.11  | 37.45 |
+| BEV | 52.0   | 51.30  | 47.50 |
+| 3D  | 42.45  | 42.11  | 39.45 |
 
-##### 3D detection performance: AP on KITTI test set
+##### Cyclist  detection performance: AP on KITTI test set
 
 | Cyclist | Easy | Moderate | Hard |
 |:-:|:-:|:-:|:-:|
-| BEV | 50.87 | 50.13 | 47.34 |
-| 3D | 40.16  | 40.36 | 39.89 |
+| BEV | 53.87  | 53.13 | 50.34 |
+| 3D  | 43.16  | 43.36 | 42.89 |
 
 # TODO
-- [] improve the preformance by using 3D sparse Convolution instead of Normal 3D convolution
+- [] improve the performance by using 3D sparse Convolution instead of Normal 3D convolution
 - [] Add the fusion code
 - [] Add ROI pooling layer
 - [] Add waymo results
-- [] A brief description about tackling of class imbalance in 3D
- 
+- [] A brief description about tackling of class imbalance in 3D/2D
+- [] Add thesis report as well
 
+
+#Important Observation
+According to literature review, below points to increase the performance of the model
+- Use of 3D sparse convolution layer as a middle layer
+- Use of more balanced data with more object instances
+- More training 
+- Use of ROI pooling after the proposal generation, ROI pooling only on certain proposals
+- Point cloud registration results in more point cloud density and more accuracy especially upto below 50 m
+- Lastly, use of late fusion using VGG or resnet with camera
+-  Convert the code into tf2 from tf1
+
+
+ #Note
+Doing all the above mentioned things, I am pretty sure that, accuracy might reach upto 80% on both pedestrian and cyclist. Since master thesis is for limited time, I can not do everything. Hope somebody can make use of everything. In the meantime, I will try to implement all the above mentioned points and update the repo, whenever I get time.
 
