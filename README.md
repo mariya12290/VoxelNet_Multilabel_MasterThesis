@@ -124,17 +124,28 @@ The current implementation and training scheme are able to produce results in th
 - [] A brief description about tackling of class imbalance in 3D/2D
 - [] Add thesis report as well
 - [] Add visual representation for Multi-Label voxelnet
+- [] Convert the code into tf2 from tf1
 
 
-##### Important Observation
-According to literature review, below points to increase the performance of the model
+# Important Observation 1
+According to literature review and my practical experience, below points to increase the performance of the model,I did some of them myself and still doing rest
 - Use of 3D sparse convolution layer as a middle layer
 - Use of more balanced data with more object instances
 - More training 
 - Use of ROI pooling after the proposal generation, ROI pooling only on certain proposals
 - Point cloud registration results in more point cloud density and more accuracy especially upto below 50 m
 - Lastly, use of late fusion using VGG or resnet with camera
--  Convert the code into tf2 from tf1
+
+# Important Observation 2
+##### Voxelnet
+- Voxelnet Based networks need an optimization of vertical scene size for each data sets
+- Give better accuracy than any lidar only or lidar + image based networks
+- No loss of information like in complex yolo, MV3D and AVOD, so better accuracy
+
+##### Pointnet
+- Good for extraction of local and neighbouring features, whcih results in better localization accuray
+- But more inference time, especially in pre processing step
+- Need to be tested how the network behaves when the point cloud density is too large
 
 
 ##### Note
