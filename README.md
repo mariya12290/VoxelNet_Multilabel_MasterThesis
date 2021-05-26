@@ -139,6 +139,7 @@ According to literature review and my practical experience, below points to incr
 # Important Observation 2
 ##### Voxelnet
 - Voxelnet Based networks need an optimization of vertical scene size for each data sets
+- Unlike pointpillars,height in the scene size is an hyper parameters depending upon datasets
 - Give better accuracy than any lidar only or lidar + image based networks
 - No loss of information like in complex yolo, MV3D and AVOD, so better accuracy
 
