@@ -93,6 +93,8 @@ $ ./kitti_eval/evaluate_object_3d_offline [DATA_DIR]/validation/label_1 ./predic
 
 # Changes made to the architecture for multi-label object detection
  Please see the comments in the files in model folder for more info.
+ ![mulit_classification](https://user-images.githubusercontent.com/64356491/119802468-d88bf480-bede-11eb-8d73-7f223d033e9d.png)
+
 
 # Voxelization
 Implementation of Preprocessing code(voxelization) by me. But in order to use voxelnet based network on Jetson or embbeded devices, we need to implement voxelization on CUDA.
