@@ -93,16 +93,17 @@ $ ./kitti_eval/evaluate_object_3d_offline [DATA_DIR]/validation/label_1 ./predic
 
 # Changes made to the architecture for multi-label object detection
  Please see the comments in the files in model folder for more info.
- ![mulit_classification](https://user-images.githubusercontent.com/64356491/119802468-d88bf480-bede-11eb-8d73-7f223d033e9d.png)
+![rpn](https://user-images.githubusercontent.com/64356491/120967940-7944a480-c768-11eb-8975-162c42e7ef83.png)
+
 
 
 # Voxelization
-Implementation of Preprocessing code(voxelization) by me. But in order to use voxelnet based network on Jetson or embbeded devices, we need to implement voxelization on CUDA.
+Implementation of Preprocessing code(voxelization). But in order to use voxelnet based network on Jetson or embbeded devices, we need to implement voxelization on CUDA.
 Recently, tensorflow team introduce tf3d, where they used tensorflow framework to write preprocessing setup, which directly runs on gpu.
    
 # Performances
 
-The current implementation and training scheme are able to produce results in the tables below.
+The current implementation and training scheme are able to produce results in the tables below. Pedestrian and cyclist are consider at the same time. 
 
 ##### Pedestrian detection performance: AP on KITTI test set
 
@@ -124,7 +125,6 @@ The current implementation and training scheme are able to produce results in th
 - [] Add ROI pooling layer
 - [] Add waymo results
 - [] A brief description about tackling of class imbalance in 3D/2D
-- [] Add thesis report as well
 - [] Add visual representation for Multi-Label voxelnet
 - [] Convert the code into tf2 from tf1
 
