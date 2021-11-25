@@ -159,5 +159,5 @@ According to literature review and my practical experience, below points to incr
 Doing all the above mentioned things, I am pretty sure that, accuracy might reach upto 80% on both pedestrian and cyclist. Since master thesis is for limited time, I can not do everything. Hope somebody can make use of everything. In the meantime, I will try to implement all the above mentioned points and update the repo, whenever I get time.
 
 ##### Note2
-I have used four different networks in my  thesis, such as Voxelnet, Second, PointPillar and PointRCNN. Since I made important modification to Voxelnet, I have written readme only to voxelnet. Whatever I have written here, applies to all the network I have used in my thesis. 
+I have used three different networks in my  thesis, such as Voxelnet, Second and PointPillar. Since I made important modification to Voxelnet, I have written readme only to voxelnet. Whatever I have written here, applies to all the network I have used in my thesis. 
 
